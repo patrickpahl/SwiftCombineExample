@@ -13,6 +13,15 @@
 		79521E9025FE78C300630D1F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 79521E8E25FE78C300630D1F /* LaunchScreen.storyboard */; };
 		79521E9B25FE78C300630D1F /* SwiftCombineExampleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79521E9A25FE78C300630D1F /* SwiftCombineExampleTests.swift */; };
 		79521EA625FE78C400630D1F /* SwiftCombineExampleUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79521EA525FE78C400630D1F /* SwiftCombineExampleUITests.swift */; };
+		79521EC125FE7A4100630D1F /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79521EC025FE7A4100630D1F /* MainViewController.swift */; };
+		79521EC625FE7A5100630D1F /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79521EC525FE7A5100630D1F /* MainViewModel.swift */; };
+		79521ECB25FE7A5B00630D1F /* MainViewProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79521ECA25FE7A5B00630D1F /* MainViewProtocols.swift */; };
+		79521ED025FE7A7300630D1F /* MainViewCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79521ECF25FE7A7300630D1F /* MainViewCoordinator.swift */; };
+		79521ED525FE7A8C00630D1F /* MainTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79521ED425FE7A8C00630D1F /* MainTableViewCell.swift */; };
+		79521EDA25FE7AA000630D1F /* MainTableViewCellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79521ED925FE7AA000630D1F /* MainTableViewCellModel.swift */; };
+		79521EE225FE7B1900630D1F /* Movie.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79521EE125FE7B1900630D1F /* Movie.swift */; };
+		79521EE725FE7B3200630D1F /* MovieService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79521EE625FE7B3200630D1F /* MovieService.swift */; };
+		79521EEC25FE7B7E00630D1F /* AppCoordinatorManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79521EEB25FE7B7E00630D1F /* AppCoordinatorManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,6 +54,15 @@
 		79521EA125FE78C400630D1F /* SwiftCombineExampleUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SwiftCombineExampleUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		79521EA525FE78C400630D1F /* SwiftCombineExampleUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftCombineExampleUITests.swift; sourceTree = "<group>"; };
 		79521EA725FE78C400630D1F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		79521EC025FE7A4100630D1F /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		79521EC525FE7A5100630D1F /* MainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewModel.swift; sourceTree = "<group>"; };
+		79521ECA25FE7A5B00630D1F /* MainViewProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewProtocols.swift; sourceTree = "<group>"; };
+		79521ECF25FE7A7300630D1F /* MainViewCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewCoordinator.swift; sourceTree = "<group>"; };
+		79521ED425FE7A8C00630D1F /* MainTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTableViewCell.swift; sourceTree = "<group>"; };
+		79521ED925FE7AA000630D1F /* MainTableViewCellModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTableViewCellModel.swift; sourceTree = "<group>"; };
+		79521EE125FE7B1900630D1F /* Movie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Movie.swift; sourceTree = "<group>"; };
+		79521EE625FE7B3200630D1F /* MovieService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieService.swift; sourceTree = "<group>"; };
+		79521EEB25FE7B7E00630D1F /* AppCoordinatorManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinatorManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,6 +115,10 @@
 			children = (
 				79521E8325FE78C200630D1F /* AppDelegate.swift */,
 				79521E8525FE78C200630D1F /* SceneDelegate.swift */,
+				79521EEB25FE7B7E00630D1F /* AppCoordinatorManager.swift */,
+				79521EE125FE7B1900630D1F /* Movie.swift */,
+				79521EE625FE7B3200630D1F /* MovieService.swift */,
+				79521EBF25FE7A2E00630D1F /* MainView */,
 				79521E8C25FE78C300630D1F /* Assets.xcassets */,
 				79521E8E25FE78C300630D1F /* LaunchScreen.storyboard */,
 				79521E9125FE78C300630D1F /* Info.plist */,
@@ -120,6 +142,19 @@
 				79521EA725FE78C400630D1F /* Info.plist */,
 			);
 			path = SwiftCombineExampleUITests;
+			sourceTree = "<group>";
+		};
+		79521EBF25FE7A2E00630D1F /* MainView */ = {
+			isa = PBXGroup;
+			children = (
+				79521EC025FE7A4100630D1F /* MainViewController.swift */,
+				79521EC525FE7A5100630D1F /* MainViewModel.swift */,
+				79521ECA25FE7A5B00630D1F /* MainViewProtocols.swift */,
+				79521ECF25FE7A7300630D1F /* MainViewCoordinator.swift */,
+				79521ED425FE7A8C00630D1F /* MainTableViewCell.swift */,
+				79521ED925FE7AA000630D1F /* MainTableViewCellModel.swift */,
+			);
+			path = MainView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -251,8 +286,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				79521EC125FE7A4100630D1F /* MainViewController.swift in Sources */,
 				79521E8425FE78C200630D1F /* AppDelegate.swift in Sources */,
+				79521EE225FE7B1900630D1F /* Movie.swift in Sources */,
 				79521E8625FE78C200630D1F /* SceneDelegate.swift in Sources */,
+				79521EE725FE7B3200630D1F /* MovieService.swift in Sources */,
+				79521ED525FE7A8C00630D1F /* MainTableViewCell.swift in Sources */,
+				79521ECB25FE7A5B00630D1F /* MainViewProtocols.swift in Sources */,
+				79521ED025FE7A7300630D1F /* MainViewCoordinator.swift in Sources */,
+				79521EDA25FE7AA000630D1F /* MainTableViewCellModel.swift in Sources */,
+				79521EEC25FE7B7E00630D1F /* AppCoordinatorManager.swift in Sources */,
+				79521EC625FE7A5100630D1F /* MainViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
