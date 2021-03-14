@@ -38,7 +38,6 @@ class MainViewController: UIViewController, MainViewControllerProtocol {
         return tableView
     }()
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
 

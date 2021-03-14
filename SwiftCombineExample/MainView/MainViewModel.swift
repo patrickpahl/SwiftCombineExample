@@ -5,8 +5,7 @@
 //  Created by Patrick Pahl on 3/14/21.
 //
 
-import Foundation
-
+import Combine
 import Foundation
 
 class MainViewModel: MainViewModelProtocol {
@@ -14,6 +13,8 @@ class MainViewModel: MainViewModelProtocol {
     let service = MovieService()
     var movies: [MovieSearch] = []
     var cellModels: [MainViewTableViewCellModel] = []
+    
+    @Published var searchText: String?
 
     enum Section: Int {
         case nice = 0
@@ -40,6 +41,7 @@ class MainViewModel: MainViewModelProtocol {
     
     func viewDidLoad() {
         //loadMovies()
+        searchMovies()
     }
     
     private func createExampleData() {
@@ -84,19 +86,37 @@ class MainViewModel: MainViewModelProtocol {
         view?.reloadData()
     }
     
-    /// pyp
     func searchTextDidChange(text: String) {
         guard text.count > 2 else { return }
         
-        service.searchMovies(searchText: text) { result in
-            switch result {
-            case .success(let movies):
-                self.movies = movies
-                self.createData()
-            case .failure(let error):
-                print("ERROR: \(error.localizedDescription)")
+        self.searchText = text
+        print("SearchTextDidChange = \(searchText)")
+
+        //        service.searchMovies(searchText: text) { result in
+        //            switch result {
+        //            case .success(let movies):
+        //                self.movies = movies
+        //                self.createData()
+        //            case .failure(let error):
+        //                print("ERROR: \(error.localizedDescription)")
+        //            }
+    }
+    
+    func searchMovies() {
+        print("HIT")
+        $searchText.sink { text in
+            guard let text = text else { return }
+            
+            self.service.searchMovies(searchText: text) { result in
+                switch result {
+                case .success(let movies):
+                    self.movies = movies
+                    self.createData()
+                case .failure(let error):
+                    print("ERROR: \(error.localizedDescription)")
+                }
             }
         }
     }
-
+    
 }
