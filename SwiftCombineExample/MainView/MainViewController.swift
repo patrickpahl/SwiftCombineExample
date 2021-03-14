@@ -68,7 +68,9 @@ class MainViewController: UIViewController, MainViewControllerProtocol {
     }
     
     func reloadData() {
-        tableView.reloadData()
+        DispatchQueue.main.async {
+            self.tableView.reloadData()
+        }
     }
 
 }

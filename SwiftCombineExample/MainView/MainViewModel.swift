@@ -12,7 +12,7 @@ import Foundation
 class MainViewModel: MainViewModelProtocol {
 
     let service = MovieService()
-    var movies: [Movie] = []
+    var movies: [MovieSearch] = []
     var cellModels: [MainViewTableViewCellModel] = []
 
     enum Section: Int {
@@ -39,7 +39,7 @@ class MainViewModel: MainViewModelProtocol {
     }
     
     func viewDidLoad() {
-        loadMovies()
+        //loadMovies()
     }
     
     private func createExampleData() {
@@ -55,32 +55,32 @@ class MainViewModel: MainViewModelProtocol {
         view?.reloadData()
     }
     
-    private func loadMovies() {
-        let group = DispatchGroup()
-        let queue = DispatchQueue(label: "movieQueue")
-        var serviceError: ServiceError?
-        
-        group.enter()
-        service.fetchTop250Movies { result in
-            switch result {
-            case .success(let movies):
-                self.movies = movies
-            case .failure(let error):
-                print("could not load movies!")
-                serviceError = error
-            }
-            group.leave()
-        }
-        
-        group.notify(queue: queue) {
-            DispatchQueue.main.async {
-                self.createData()
-            }
-        }
-    }
+//    private func loadMovies() {
+//        let group = DispatchGroup()
+//        let queue = DispatchQueue(label: "movieQueue")
+//        var serviceError: ServiceError?
+//
+//        group.enter()
+//        service.fetchTop250Movies { result in
+//            switch result {
+//            case .success(let movies):
+//                self.movies = movies
+//            case .failure(let error):
+//                print("could not load movies!")
+//                serviceError = error
+//            }
+//            group.leave()
+//        }
+//
+//        group.notify(queue: queue) {
+//            DispatchQueue.main.async {
+//                self.createData()
+//            }
+//        }
+//    }
     
     func createData() {
-        cellModels = movies.map({ MainViewTableViewCellModel(titleText: $0.fullTitle, descriptionText: $0.imDbRating) })
+        cellModels = movies.map({ MainViewTableViewCellModel(titleText: $0.title, descriptionText: $0.resultType) })
         view?.reloadData()
     }
     
@@ -88,7 +88,15 @@ class MainViewModel: MainViewModelProtocol {
     func searchTextDidChange(text: String) {
         guard text.count > 2 else { return }
         
-        
+        service.searchMovies(searchText: text) { result in
+            switch result {
+            case .success(let movies):
+                self.movies = movies
+                self.createData()
+            case .failure(let error):
+                print("ERROR: \(error.localizedDescription)")
+            }
+        }
     }
 
 }

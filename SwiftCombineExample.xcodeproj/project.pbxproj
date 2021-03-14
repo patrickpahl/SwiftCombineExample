@@ -22,6 +22,7 @@
 		79521EE225FE7B1900630D1F /* Movie.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79521EE125FE7B1900630D1F /* Movie.swift */; };
 		79521EE725FE7B3200630D1F /* MovieService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79521EE625FE7B3200630D1F /* MovieService.swift */; };
 		79521EEC25FE7B7E00630D1F /* AppCoordinatorManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79521EEB25FE7B7E00630D1F /* AppCoordinatorManager.swift */; };
+		79521EF425FEA88800630D1F /* MovieSearch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79521EF325FEA88800630D1F /* MovieSearch.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -63,6 +64,7 @@
 		79521EE125FE7B1900630D1F /* Movie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Movie.swift; sourceTree = "<group>"; };
 		79521EE625FE7B3200630D1F /* MovieService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieService.swift; sourceTree = "<group>"; };
 		79521EEB25FE7B7E00630D1F /* AppCoordinatorManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinatorManager.swift; sourceTree = "<group>"; };
+		79521EF325FEA88800630D1F /* MovieSearch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieSearch.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -117,6 +119,7 @@
 				79521E8525FE78C200630D1F /* SceneDelegate.swift */,
 				79521EEB25FE7B7E00630D1F /* AppCoordinatorManager.swift */,
 				79521EE125FE7B1900630D1F /* Movie.swift */,
+				79521EF325FEA88800630D1F /* MovieSearch.swift */,
 				79521EE625FE7B3200630D1F /* MovieService.swift */,
 				79521EBF25FE7A2E00630D1F /* MainView */,
 				79521E8C25FE78C300630D1F /* Assets.xcassets */,
@@ -296,6 +299,7 @@
 				79521ED025FE7A7300630D1F /* MainViewCoordinator.swift in Sources */,
 				79521EDA25FE7AA000630D1F /* MainTableViewCellModel.swift in Sources */,
 				79521EEC25FE7B7E00630D1F /* AppCoordinatorManager.swift in Sources */,
+				79521EF425FEA88800630D1F /* MovieSearch.swift in Sources */,
 				79521EC625FE7A5100630D1F /* MainViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
