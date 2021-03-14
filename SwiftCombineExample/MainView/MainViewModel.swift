@@ -10,7 +10,7 @@ import Foundation
 import Foundation
 
 class MainViewModel: MainViewModelProtocol {
-    
+
     let service = MovieService()
     var movies: [Movie] = []
     var cellModels: [MainViewTableViewCellModel] = []
@@ -39,9 +39,7 @@ class MainViewModel: MainViewModelProtocol {
     }
     
     func viewDidLoad() {
-        //createExampleData()
         loadMovies()
-        
     }
     
     private func createExampleData() {
@@ -84,6 +82,13 @@ class MainViewModel: MainViewModelProtocol {
     func createData() {
         cellModels = movies.map({ MainViewTableViewCellModel(titleText: $0.fullTitle, descriptionText: $0.imDbRating) })
         view?.reloadData()
+    }
+    
+    /// pyp
+    func searchTextDidChange(text: String) {
+        guard text.count > 2 else { return }
+        
+        
     }
 
 }

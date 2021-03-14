@@ -21,6 +21,7 @@ protocol MainViewModelProtocol: class {
     func numberOfRows(section: Int) -> Int
     func cellModel(indexPath: IndexPath) -> MainViewTableViewCellModel?
     func viewDidLoad()
+    func searchTextDidChange(text: String)
 }
 
 protocol MainViewCoordinatorProtocol: class {
